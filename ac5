@@ -1,0 +1,76 @@
+CREATE TABLE Disciplina(
+	nome VARCHAR(50),
+	ementa VARCHAR (100),
+CONSTRAINT pkDisciplina PRIMARY KEY (nome)
+);
+INSERT INTO Disciplina (nome, ementa)
+VALUES
+	('SQL', 'Criação de tabelas, inserção de dados e atualização de tabelas.')
+	('Desenvolvimento Web', 'Desenvolvimento de páginas em HTML e utilização do Framework Django.')
+	('Engenharia de Software', 'Definições de requisitos para criação de softwares.')
+UPDATE Disciplina
+SET
+	nome = 'Linguagem SQL'
+
+CREATE TABLE Disciplina_ofertada(
+	nome_disciplina VARCHAR(50),
+	ano SMALLINT,
+	semestre TINYINT,
+CONSTRAINT pkDisciplina_ofertada PRIMARY KEY (nome_disciplina,ano,semestre),
+CONSTRAINT fkdis_ofe FOREIGN KEY (nome_disciplina) REFERENCES Disciplina(nome)
+);
+INSERT INTO Disciplina_ofertada (nome_disciplina, ano, semestre)
+VALUES
+	('SQL', '2018', '1')
+	('Desenvolvimento Web', '2018', '1')
+	('Engenharia de Software', '2018', '1')
+	
+CREATE TABLE aluno(
+	ra VARCHAR (7),
+	nome VARCHAR (50),
+	email VARCHAR (50),
+CONSTRAINT pkAluno PRIMARY KEY (ra)
+);
+INSERT INTO aluno (ra, nome, email)
+VALUES
+	('1234567', 'Carla Andrade', NULL)
+	('1701344', 'Ariadne Moreira', 'ariadnemoreiracaetano@gmail.com')
+	('1700953') 'Paulo Pavan', 'paulopavan97@gmail.com')
+DELETE FROM aluno WHERE ra = '1234567'
+	
+CREATE TABLE matricula(
+	ra_aluno VARCHAR (7),
+	nome_disciplina VARCHAR(50),
+	ano_ofertado SMALLINT,
+	semestre_ofertado TINYINT,
+CONSTRAINT pkmatricula PRIMARY KEY (ra_aluno,nome_disciplina,ano_ofertado,semestre_ofertado),
+CONSTRAINT fkmat_ra FOREIGN KEY (ra_aluno) REFERENCES aluno(ra),
+CONSTRAINT fkmat_no FOREIGN KEY (nome_disciplina,ano_ofertado,semestre_ofertado) REFERENCES Disciplina_ofertada(nome_disciplina,ano,semestre)
+);
+INSERT INTO matricula (ra_aluno, nome_disciplina, ano_ofertado, semestre_ofertado)
+VALUES
+	('1234567','SQL', '2018', '1')
+	
+CREATE TABLE atividade_1(
+	nome_disciplina VARCHAR(50),
+	semestre_ofertado TINYINT,
+	ano_ofertado SMALLINT,
+	sequencial SMALLINT,
+	data DATE,
+	titulo VARCHAR (50),
+CONSTRAINT pkatividade_1 PRIMARY KEY (nome_disciplina, semestre_ofertado, ano_ofertado, sequencial),
+CONSTRAINT fkat_1 FOREIGN KEY (nome_disciplina,ano_ofertado,semestre_ofertado) REFERENCES Disciplina_ofertada(nome_disciplina,ano,semestre)
+);
+
+CREATE TABLE atividade_2 (
+	ra_aluno VARCHAR (7),
+	nome_disciplina VARCHAR(50),
+	semestre_ofertado TINYINT,
+	ano_ofertado SMALLINT,
+	sequencial_atividade SMALLINT,
+	nota SMALLINT,
+CONSTRAINT pkatividade_2 PRIMARY KEY (ra_aluno, nome_disciplina, semestre_ofertado, ano_ofertado, sequencial_atividade),
+CONSTRAINT fkati2_ra FOREIGN KEY (ra_aluno) REFERENCES aluno(ra),
+CONSTRAINT fkati2_nome FOREIGN KEY (nome_disciplina, semestre_ofertado, ano_ofertado, sequencial_atividade) REFERENCES atividade_1(nome_disciplina, semestre_ofertado, ano_ofertado, sequencial)
+);
+	
