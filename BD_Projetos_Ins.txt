@@ -1,0 +1,61 @@
+INSERT INTO Disciplina (nome, ementa)
+VALUES
+	('SQL', 'Criação de tabelas, inserção de dados e atualização de tabelas.'),
+	('Desenvolvimento Web', 'Desenvolvimento de páginas em HTML e utilização do Framework Django.'),
+	('Engenharia de Software', 'Definições de requisitos para criação de softwares.'),
+	('Analise de dados','Nesta monografia est˜ao inclu´idas algumas t´ecnicas de An´alise de Dados especialmente ´uteis para a an´alise de grandes conjuntos de dados. Estas t´ecnicas s˜ao de natureza explorat´oria e n˜ao confirmat´oria. Todas elas s˜ao basicamente t´ecnicas dependentes de um uso adequado de resultados de Algebra Linear'),
+	('Banco de Dados', 'Criar modelos de MER e DER Entidade Relacionamento'),
+	('IoT', 'Eletronica para projetos, Projetos Automatizados'),
+	('Matematica Aplicada','Calculos para engenharia de computadores e logica de programação'),
+	('Logica de Programação', 'Modelos logicos, logica de programação e desenvolvimento de algoritmos'),
+	('Desenvolvimento de sistemas integrados', 'Desenvolver sistemas integrados na area de TI'),
+	('Redes de computadores', 'Desenvolver projetos para Data-Center e redes empresariais')
+UPDATE Disciplina
+SET
+	nome = 'Linguagem SQL'
+
+INSERT INTO DisciplinaOfertada (nome_disciplina, ano, semestre)
+VALUES
+	('SQL', '2018', '1'),
+	('Desenvolvimento Web', '2018', '1'),
+	('Engenharia de Software', '2018', '1'),
+	('Analise de dados', '2018','2'),
+	('Banco de Dados','2018','2'),
+	('IoT','2018','2'),
+	('Matematica Aplicada','2018','2'),
+	('Logica de Programação','2018','2'),
+	('Desenvolvimento de sistemas integrados','2018','2'),
+	('Redes de computadores','2018','2')
+	
+	
+
+INSERT INTO Aluno (ra, nome, email)
+VALUES
+	('1234567', 'Carla Andrade', NULL),
+	('1701344', 'Ariadne Moreira', 'ariadnemoreiracaetano@gmail.com'),
+	('1700953', 'Paulo Pavan', 'paulopavan97@gmail.com'),
+	('1290890', 'André Amado', NULL),
+	('1266555', 'Fabricio Belam', 'fabriciobelam@gmail.com'),
+	('1234444', 'Alexey Samofalov', 'samofalov@hotmail.com'),
+	('1732132', 'Mateus Gales', 'matheugales@gmail.com'),
+	('1767688', 'Jessica Alves', 'jessialves@gmail.com'),
+	('1278679', 'Marcelo Ferrari', NULL),
+	('1732345', 'Caio Diogines', NULL)
+	
+DELETE FROM Aluno WHERE ra = '1234567'
+
+INSERT INTO Matricula (ra_aluno, nome_disciplina, ano_ofertado, semestre_ofertado)
+VALUES
+	('1701344','SQL', '2018', '1'),
+	('1290890','Matematica Aplicada','2018','2'),
+	('1266555','Desenvolvimento de sistemas integrados','2018','2'),
+	('1234444','IoT','2018','2'),
+	('1732132','Desenvolvimento Web','2018','1'),
+	('1767688','Logica de programação','2018','2'),
+	('1278679','Redes de computadores','2018','2'),
+	('1732345','Banco de Dados','2018','2'),
+	('1701344','Engenharia de Software','2018','1'),
+	('1700953','Analise de dados','2018','2')
+	
+	
+SELECT * FROM Disciplina
