@@ -1,13 +1,13 @@
 INSERT INTO Disciplina (nome, ementa)
 VALUES
-	('SQL', 'CriaÁ„o de tabelas, inserÁ„o de dados e atualizaÁ„o de tabelas.'),
-	('Desenvolvimento Web', 'Desenvolvimento de p·ginas em HTML e utilizaÁ„o do Framework Django.'),
-	('Engenharia de Software', 'DefiniÁıes de requisitos para criaÁ„o de softwares.'),
-	('Analise de dados','Nesta monografia estòao inclu¥idas algumas t¥ecnicas de An¥alise de Dados especialmente ¥uteis para a an¥alise de grandes conjuntos de dados. Estas t¥ecnicas sòao de natureza explorat¥oria e nòao confirmat¥oria. Todas elas sòao basicamente t¥ecnicas dependentes de um uso adequado de resultados de Algebra Linear'),
+	('SQL', 'Cria√ß√£o de tabelas, inser√ß√£o de dados e atualiza√ß√£o de tabelas.'),
+	('Desenvolvimento Web', 'Desenvolvimento de p√°ginas em HTML e utiliza√ß√£o do Framework Django.'),
+	('Engenharia de Software', 'Defini√ß√µes de requisitos para cria√ß√£o de softwares.'),
+	('Analise de dados','Nesta monografia estao incluidas algumas tecnicas de Analise de Dados especialmente uteis para a analise de grandes conjuntos de dados. Estas tecnicas sao de natureza exploratoria e nao confirmatoria. Todas elas sao basicamente tecnicas dependentes de um uso adequado de resultados de Algebra Linear'),
 	('Banco de Dados', 'Criar modelos de MER e DER Entidade Relacionamento'),
 	('IoT', 'Eletronica para projetos, Projetos Automatizados'),
-	('Matematica Aplicada','Calculos para engenharia de computadores e logica de programaÁ„o'),
-	('Logica de ProgramaÁ„o', 'Modelos logicos, logica de programaÁ„o e desenvolvimento de algoritmos'),
+	('Matematica Aplicada','Calculos para engenharia de computadores e logica de programa√ß√£o'),
+	('Logica de Programa√ß√£o', 'Modelos logicos, logica de programa√ß√£o e desenvolvimento de algoritmos'),
 	('Desenvolvimento de sistemas integrados', 'Desenvolver sistemas integrados na area de TI'),
 	('Redes de computadores', 'Desenvolver projetos para Data-Center e redes empresariais')
 UPDATE Disciplina
@@ -23,7 +23,7 @@ VALUES
 	('Banco de Dados','2018','2'),
 	('IoT','2018','2'),
 	('Matematica Aplicada','2018','2'),
-	('Logica de ProgramaÁ„o','2018','2'),
+	('Logica de Programa√ß√£o','2018','2'),
 	('Desenvolvimento de sistemas integrados','2018','2'),
 	('Redes de computadores','2018','2')
 	
@@ -34,7 +34,7 @@ VALUES
 	('1234567', 'Carla Andrade', NULL),
 	('1701344', 'Ariadne Moreira', 'ariadnemoreiracaetano@gmail.com'),
 	('1700953', 'Paulo Pavan', 'paulopavan97@gmail.com'),
-	('1290890', 'AndrÈ Amado', NULL),
+	('1290890', 'Andr√© Amado', NULL),
 	('1266555', 'Fabricio Belam', 'fabriciobelam@gmail.com'),
 	('1234444', 'Alexey Samofalov', 'samofalov@hotmail.com'),
 	('1732132', 'Mateus Gales', 'matheugales@gmail.com'),
@@ -51,11 +51,37 @@ VALUES
 	('1266555','Desenvolvimento de sistemas integrados','2018','2'),
 	('1234444','IoT','2018','2'),
 	('1732132','Desenvolvimento Web','2018','1'),
-	('1767688','Logica de programaÁ„o','2018','2'),
+	('1767688','Logica de programa√ß√£o','2018','2'),
 	('1278679','Redes de computadores','2018','2'),
 	('1732345','Banco de Dados','2018','2'),
 	('1701344','Engenharia de Software','2018','1'),
 	('1700953','Analise de dados','2018','2')
 	
+INSERT INTO Atividade (nome_disciplina, ano_ofertado, semestre_ofertado, sequencial, data, titulo)
+VALUES
+	('SQL', '2018', '1', '1', '03/07/2018', 'Introdu√ß√£o ao SQL'),
+	('SQL', '2018', '1', '2', '03/14/2018', 'Base te√≥rica do SQL SERVER'),
+	('SQL', '2018', '1', '3', '03/21/2018', 'Introdu√ß√£o ao SQL'),
+	('SQL', '2018', '1', '4', '03/28/2018', 'Create tables'),
+	('SQL', '2018', '1', '5', '03/28/2018', 'Insert em tabelas'),
+	('SQL', '2018', '1', '6', '04/04/2018', 'Fun√ß√£o Delete'),
+	('SQL', '2018', '1', '7', '04/04/2018', 'Fun√ß√£o Update'),
+	('SQL', '2018', '1', '8', '04/11/2018', 'Fun√ß√£o Alter table'),
+	('SQL', '2018', '1', '9', '04/18/2018', 'Projeto, fase um'),
+	('SQL', '2018', '1', '10', '04/25/2018', 'Projeto, fase dois'),
+	('SQL', '2018', '1', '11', '05/02/2018', 'Projeto, fase tr√™s'),
+	('SQL', '2018', '1', '12', '05/09/2018', 'Projeto final'),
 	
-SELECT * FROM Disciplina
+INSERT INTO AlunoAtividade (ra_aluno, nome_disciplina, ano_ofertado, semestre_ofertado, sequencial_atividade, nota)
+VALUES
+	('1701344', 'SQL', '2018', '1', '1', '5'),
+	('1701344', 'SQL', '2018', '1', '2', '5.5'),
+	('1701344', 'SQL', '2018', '1', '3', '6'),
+	('1701344', 'SQL', '2018', '1', '4', '6.5'),
+	('1701344', 'SQL', '2018', '1', '5', '7'),
+	('1701344', 'SQL', '2018', '1', '6', '7.5'),
+	('1701344', 'SQL', '2018', '1', '7', '8'),
+	('1701344', 'SQL', '2018', '1', '8', '8.5'),
+	('1701344', 'SQL', '2018', '1', '9', '9'),
+	('1701344', 'SQL', '2018', '1', '10', '9.5')
+	
